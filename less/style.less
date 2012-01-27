@@ -1,0 +1,312 @@
+@import 'libs/less/grid.less';
+
+/* ==|== HelpLess - LESS Helpers Library (http://m6tt.github.com/HelpLess) = */
+@import 'libs/helpless.0.0.3.less';
+/* ==|== Import HTML5 ✰ Boilerplate LESS library =========================== */
+@import 'libs/boilerplate.less';
+
+/* Normalize */
+#blr.normalize(#0abbcd, #555);
+
+/* ==|== primary styles =====================================================
+   Author:
+  ========================================================================== */
+
+//////////
+// GRID //
+//////////
+
+// Specify the number of columns and set column and gutter widths
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+// Remove the definition below for a pixel-based layout
+@total-width: 100%;
+
+/////colour/////
+@color: #9c132d;
+//@color: #9c1416;//
+
+.redstrip{
+	background:@color;
+	width:100%;
+	height:5px;
+	}
+	/** menu **/
+ul#menu{
+	padding:20px 0 5px 0;
+	clear:both;
+	height: 1.5em;
+	font-size:1.1em;
+	}
+#menu li{
+	float:left;
+	margin:0;
+	}
+#menu li a{
+	padding:0 10px;
+	color:#4e4242;
+	text-decoration:none;
+	display:block;
+	}
+#menu li a.active,	
+#menu li a:hover{
+	color:@color;
+	}
+#menu li a.home{
+	background: url(../images/home.png) 5px 3px no-repeat;
+	text-indent:-3000px;
+	display:block;
+	height: 18px;
+	margin-top: -3px;
+	}
+#menu li a:hover.home{
+	background: url(../images/home_hover.png) 5px 3px no-repeat;
+	}
+////////////
+// LAYOUT //
+////////////
+
+// center the contents
+div.center {
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	background: url(../images/spiral.png) 573px -143px  no-repeat
+}
+
+// header
+header#top {
+}
+
+// main column & sidebar
+#maincolumn {
+	.column(9);
+}
+#sidebar {
+	.column(3);
+}
+#homecolumn {
+	.column(8);
+}
+#homesidebar {
+	.column(4);
+}
+#middlecolumn {
+	.column(6);
+	margin-bottom: 3em;
+}
+#rightsidebar {
+	.column(3);
+}
+#onecolumn{
+	.column(12);
+	}
+
+
+#middlecolumn img{
+	border:1px solid #eee;
+	padding:5px;
+	margin: 10px 0;
+}
+#middlecolumn,
+#maincolumn{
+	line-height:1.4em;
+	}
+#middlecolumn p,
+#maincolumn p{
+padding: 5px;
+}
+.mainsite{
+padding:0 10px;
+}
+#maincolumn .mainsite p{
+padding:5px 0;
+}
+#rightsidebar h3{
+margin: 0 7px;
+padding-left:0.6em;
+background:@color;
+color:#fff;
+}
+.restaurant{
+position:relative;
+float:left;
+}
+
+
+/* ==|== media queries ====================================================== */
+/* Screen width <= 320px */
+@media only screen and (max-width: 320px) {
+	body{
+	font-size:1em;
+	}
+		.center,
+	#maincolumn,
+	#sidebar,
+	#middlecolumn,
+	#rightsidebar	{
+		.column(12);
+		margin-bottom: 1em;
+	}
+	ul#menu{
+	height:auto;
+	}
+	#menu li{
+		padding:3px;
+		}
+	.products li .viewitem{
+	font-size:0.9em;
+	}
+	.infooter,.infooter.first,.infooter.last{
+	width:100%;
+	}
+	.about li{
+	width:100%;
+	}
+	.about li p{
+	padding-left:1%;
+	float:left;
+	}
+	.specials li,#homesidebar,
+	.imageleft,.textright {
+	width:100%;
+	}
+	.specials li a{
+	width:170px;
+	}
+	.spanish_products p, .spanish_products img,
+	.productimage, .producttext,
+	.imagerestaurant,
+	.newstext,
+	.newspic{
+	width: 100%;
+	}
+	#scrolltable{
+	overflow-x: scroll;
+	}
+	.login,#logo,.shoppingprocess li{
+	width:100%;
+	}
+	a div#logo p{
+	padding:10px 45px;
+	}
+	.products li  .viewitem{
+	display:none;
+	}
+}
+
+/* Screen width > 320px */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+	body{
+	font-size:1em;
+	}
+	.center,
+	#maincolumn,
+	#sidebar,
+	#middlecolumn,
+	#rightsidebar	{
+		.column(12);
+		margin-bottom: 1em;
+	}
+	#imagewrapper{
+	margin-top:30px;
+	}
+	.infooter,.infooter.first,.infooter.last{
+	width:100%;
+	}
+	.about li{
+	width:100%;
+	}
+	.about li p{
+	padding-left:1%;
+	float:left;
+	}
+	.specials li,
+	#homesidebar,
+	.imageleft,.textright {
+	width:100%;
+	}
+	#homecolumn{
+	width:100%;
+	}
+	.specials li a{
+	width:170px;
+	}
+	.spanish_products p, .spanish_products img,
+	.productimage, .producttext,
+	.imagerestaurant,
+	.newstext,
+	.newspic{
+	width: 100%;
+	}
+	#scrolltable{
+	overflow-x: scroll;
+	}
+	.login,#logo,.shoppingprocess li{
+	width:100%;
+	}
+	a div#logo p{
+	padding:10px 45px;
+	}
+	.products li  .viewitem{
+	display:none;
+	}
+}
+
+/* Screen width > 480px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.center,
+	#maincolumn,
+	#sidebar,
+	#middlecolumn,
+	#rightsidebar	{
+		.column(12);
+		margin-bottom: 1em;
+	}
+	.infooter,.infooter.first,.infooter.last{
+	width:100%;
+	}
+	.about li{
+	width:100%;
+	}
+	.about li p{
+	padding-left:1%;
+	float:left;
+	}
+	.specials li,
+	#homesidebar,
+	.imageleft,.textright,
+	.productimage, .producttext,
+	.newstext,
+	.newspic{
+	width:100%;
+	}
+	#homecolumn{
+	width:100%;
+	}
+	.specials li a{
+	width:170px;
+	}
+}
+
+/* Screen width > 768px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+/* Screen width > 1024px */
+@media only screen and (min-width: 1023px) and (max-width: 1280px) {
+
+}
+
+/* Screen width > 1280px */
+@media only screen and (min-width: 1281px) {
+}
+
+/* ==|== endos ==============================================================
+   Please define your styles before this section.
+   ========================================================================== */
+#blr.ns-helpers();
+@media print { #blr.media-print(); }
